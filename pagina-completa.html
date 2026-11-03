@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>Apartashower · Cata &amp; Leo</title>
+<meta name="description" content="Marca aquí lo que vas a llevar, para que nadie lo repita.">
+<meta property="og:title" content="Apartashower · Cata &amp; Leo">
+<meta property="og:description" content="Marca aquí lo que vas a llevar, para que nadie lo repita.">
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --papel:#FDFBF7; --tinta:#211E1B; --suave:#7A7066;
+    --linea:#DED6C9; --apagado:#B5ACA0;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  body{
+    background:var(--papel); color:var(--tinta);
+    font-family:'Cormorant Garamond',Georgia,serif;
+    -webkit-font-smoothing:antialiased;
+    padding:26px 16px 54px;
+  }
+  .hoja{max-width:560px;margin:0 auto}
+
+  header{text-align:center}
+  .retrato{
+    display:block;width:min(260px,62vw);margin:0 auto 2px;
+    mix-blend-mode:multiply;
+    -webkit-mask-image:
+      linear-gradient(to bottom,#000 72%,rgba(0,0,0,0) 97%),
+      linear-gradient(to right,rgba(0,0,0,0) 0%,#000 8%,#000 92%,rgba(0,0,0,0) 100%);
+    -webkit-mask-composite:source-in;
+    mask-composite:intersect;
+  }
+  .eyebrow{font-size:13px;letter-spacing:.42em;text-indent:.42em;text-transform:uppercase;color:var(--suave)}
+  h1{font-family:'Great Vibes',cursive;font-size:58px;font-weight:400;line-height:1.05;margin-top:6px}
+  .nombres{display:flex;align-items:baseline;justify-content:center;gap:9px;margin-top:-2px}
+  .nombres .de{font-size:17px;font-style:italic;font-weight:300;color:var(--suave)}
+  .nombres .quienes{font-family:'Great Vibes',cursive;font-size:32px;line-height:1.15}
+  .cuando{
+    margin-top:16px;font-size:13.5px;letter-spacing:.2em;text-indent:.2em;
+    text-transform:uppercase;color:#5F574E;line-height:1.95;
+  }
+
+  .intro{
+    margin:24px auto 0;max-width:460px;text-align:center;
+    font-size:18px;line-height:1.5;color:#4A443E;
+  }
+
+  .regla{height:1px;background:var(--linea);margin:24px 0 2px}
+
+  ul{list-style:none}
+  li{
+    display:flex;align-items:center;gap:13px;
+    padding:15px 2px;border-bottom:1px solid var(--linea);
+  }
+  li svg.ic{
+    flex:0 0 auto;width:38px;height:38px;stroke:#6F6459;stroke-width:2.1;
+    fill:none;stroke-linecap:round;stroke-linejoin:round;
+  }
+  .quien{flex:1 1 auto;min-width:0}
+  .nombre{font-size:19px;line-height:1.25}
+  .estado{font-size:14px;color:var(--suave);margin-top:3px;font-style:italic}
+
+  li.tomado svg.ic{stroke:var(--apagado)}
+  li.tomado .nombre{text-decoration:line-through;text-decoration-color:var(--apagado);color:var(--apagado)}
+  li.tomado .estado{color:var(--apagado);font-style:normal}
+
+  button{
+    flex:0 0 auto;font-family:inherit;cursor:pointer;
+    background:transparent;color:var(--tinta);
+    border:1px solid var(--tinta);border-radius:999px;
+    padding:9px 15px;font-size:12px;letter-spacing:.14em;text-indent:.14em;
+    text-transform:uppercase;white-space:nowrap;
+  }
+  button:active{background:var(--tinta);color:var(--papel)}
+  button:disabled{opacity:.45;cursor:default}
+  button.deshacer{border-color:var(--linea);color:var(--suave);font-size:11px;padding:7px 12px}
+  .marca{
+    flex:0 0 auto;font-size:12px;letter-spacing:.14em;text-indent:.14em;
+    text-transform:uppercase;color:var(--apagado);white-space:nowrap;
+  }
+
+  footer{margin-top:32px;text-align:center}
+  .despedida{font-family:'Great Vibes',cursive;font-size:32px}
+  .sobres{margin-top:8px;font-size:16px;color:var(--suave);line-height:1.5}
+  .avisito{margin-top:22px;font-size:13px;color:var(--apagado);letter-spacing:.06em;line-height:1.6}
+  .cargando{text-align:center;color:var(--suave);padding:34px 0;font-style:italic;border:0}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <symbol id="i-vaso" viewBox="0 0 48 48"><path d="M13 7 H35 L31.8 41 a2.2 2.2 0 0 1 -2.2 2 H18.4 a2.2 2.2 0 0 1 -2.2 -2 Z"/><path d="M15.2 18 H32.8"/></symbol>
+  <symbol id="i-sarten" viewBox="0 0 48 48"><circle cx="18" cy="24" r="13"/><circle cx="18" cy="24" r="9.2"/><path d="M31 20.5 H42 a3.5 3.5 0 0 1 0 7 H31"/></symbol>
+  <symbol id="i-tabla" viewBox="0 0 48 48"><rect x="10" y="8" width="28" height="34" rx="5"/><circle cx="16.5" cy="14.5" r="2.1"/></symbol>
+  <symbol id="i-frasco" viewBox="0 0 48 48"><rect x="14" y="5" width="20" height="6" rx="2"/><path d="M15.5 11 V38 a5 5 0 0 0 5 5 h7 a5 5 0 0 0 5 -5 V11"/><path d="M15.5 20 H32.5"/></symbol>
+  <symbol id="i-toalla" viewBox="0 0 48 48"><rect x="9" y="15" width="30" height="11" rx="5"/><rect x="9" y="28" width="30" height="11" rx="5"/><path d="M17.5 15.5 V25.5"/><path d="M17.5 28.5 V38.5"/></symbol>
+  <symbol id="i-picatodo" viewBox="0 0 48 48"><path d="M20.5 13 V9.5 a3.5 3.5 0 0 1 7 0 V13"/><path d="M12.5 13 H35.5"/><path d="M15 13 V28.5"/><path d="M33 13 V28.5"/><path d="M24 18 V25"/><path d="M18 25 H30"/><path d="M13 28.5 H35 v8 a3 3 0 0 1 -3 3 H16 a3 3 0 0 1 -3 -3 Z"/></symbol>
+  <symbol id="i-licuadora" viewBox="0 0 48 48"><path d="M16 7 L18.5 29 h11 L32 7 Z"/><path d="M14.5 7 H33.5"/><path d="M19 29 h10 v4 h-10 Z"/><path d="M11 33 H37 v5 a3 3 0 0 1 -3 3 H14 a3 3 0 0 1 -3 -3 Z"/></symbol>
+  <symbol id="i-olla" viewBox="0 0 48 48"><path d="M13 19 h22 v14 a5 5 0 0 1 -5 5 h-12 a5 5 0 0 1 -5 -5 Z"/><path d="M10.5 19 H37.5"/><path d="M24 19 V15"/><circle cx="24" cy="13.5" r="2"/><path d="M13 22 h-3.5 a2.2 2.2 0 0 0 0 4.4 H13"/><path d="M35 22 h3.5 a2.2 2.2 0 0 1 0 4.4 H35"/></symbol>
+  <symbol id="i-jarra" viewBox="0 0 48 48"><path d="M16 11 L18 38 a3 3 0 0 0 3 2.6 h6 a3 3 0 0 0 3 -2.6 L31 11"/><path d="M31 11 H16 L12 8.5"/><path d="M31 17 a7 7 0 0 1 0 13"/><path d="M17 20 H30"/></symbol>
+  <symbol id="i-tostadora" viewBox="0 0 48 48"><path d="M8 21 a5 5 0 0 1 5 -5 h22 a5 5 0 0 1 5 5 v10 a5 5 0 0 1 -5 5 H13 a5 5 0 0 1 -5 -5 Z"/><path d="M15 20.5 H22"/><path d="M26 20.5 H33"/><path d="M40 25 h3.5"/><path d="M14 36 V39"/><path d="M34 36 V39"/></symbol>
+  <symbol id="i-tazon" viewBox="0 0 48 48"><path d="M7 19 H41"/><path d="M10 19 a14 14 0 0 0 28 0"/></symbol>
+  <symbol id="i-cuchillos" viewBox="0 0 48 48"><path d="M6 30 H30 V22 C22 22, 12 25, 6 30 Z"/><path d="M30 23.5 h7 a2.5 2.5 0 0 1 0 5 h-7"/><path d="M10 17 H34"/><path d="M10 17 C16 12, 26 10, 34 10 V17"/><path d="M34 11.5 h6 a2.3 2.3 0 0 1 0 4.5 h-6"/></symbol>
+  <symbol id="i-rallador" viewBox="0 0 48 48"><path d="M20 9 h8 v3 h-8 Z"/><path d="M20.5 12 L16 38 a2.5 2.5 0 0 0 2.5 3 h11 a2.5 2.5 0 0 0 2.5 -3 L27.5 12 Z"/><path d="M19 20 h2.5"/><path d="M26 20 h2.5"/><path d="M18 27 h2.5"/><path d="M25 27 h2.5"/><path d="M17 34 h2.5"/><path d="M24 34 h2.5"/></symbol>
+  <symbol id="i-utensilios" viewBox="0 0 48 48"><path d="M17 8 V27"/><path d="M11.5 31.5 a5.5 5.5 0 0 0 11 0 a5.5 5.5 0 0 0 -11 0 Z"/><path d="M32 8 V24"/><path d="M27.5 24 h9 v10 a3 3 0 0 1 -3 3 h-3 a3 3 0 0 1 -3 -3 Z"/></symbol>
+  <symbol id="i-almohada" viewBox="0 0 48 48"><path d="M7 19 C7 15, 11 13, 16 13 H32 C37 13, 41 15, 41 19 V25 C41 29, 37 31, 32 31 H16 C11 31, 7 29, 7 25 Z"/><path d="M7 22 C13 24.5, 19 25.5, 24 25.5 S35 24.5, 41 22"/></symbol>
+  <symbol id="i-planchar" viewBox="0 0 48 48"><path d="M7 15 h21 c6 0 10 2 10 4 s-4 4 -10 4 H7 a4 4 0 0 1 0 -8 Z"/><path d="M13 23 L28 41"/><path d="M28 23 L13 41"/></symbol>
+</defs></svg>
+
+<div class="hoja">
+  <header>
+    <img class="retrato" src="pareja.png" alt="">
+    <div class="eyebrow">Estás invitado</div>
+    <h1>Apartashower</h1>
+    <div class="nombres"><span class="de">de</span><span class="quienes">Cata &amp; Leo</span></div>
+    <div class="cuando">Sábado 7 de noviembre · 4:00 pm<br>Edificio Pórtico VI, terraza · Cra 18B #106A-52</div>
+  </header>
+
+  <p class="intro">
+    Si vas a llevar algo, márcalo aquí para que nadie lo repita.
+  </p>
+
+  <div class="regla"></div>
+  <ul id="lista"><li class="cargando">Un momento…</li></ul>
+
+  <footer>
+    <div class="despedida">Te esperamos</div>
+    <div class="sobres">Y si lo prefieres, también recibimos lluvia de sobres.</div>
+    <div class="avisito">Esta lista se actualiza sola.<br>Si alguien marca algo, lo verás aquí.</div>
+  </footer>
+</div>
+
+<script>
+(function(){
+  var API = '/api/regalos';
+  var LLAVE = 'apartashower_mios';
+  var lista = document.getElementById('lista');
+  var mios = [];
+  try { mios = JSON.parse(localStorage.getItem(LLAVE) || '[]'); } catch (e) { mios = []; }
+
+  function guardar(){ try { localStorage.setItem(LLAVE, JSON.stringify(mios)); } catch (e) {} }
+  function esMio(id){ return mios.indexOf(id) !== -1; }
+
+  function pintar(regalos){
+    if (!regalos || !regalos.length) return;
+    lista.innerHTML = '';
+    regalos.forEach(function(r){
+      var li = document.createElement('li');
+      if (r.tomado) li.className = 'tomado';
+
+      var svg = document.createElementNS('http://www.w3.org/2000/svg','svg');
+      svg.setAttribute('class','ic');
+      svg.setAttribute('viewBox','0 0 48 48');
+      var use = document.createElementNS('http://www.w3.org/2000/svg','use');
+      use.setAttribute('href','#' + r.icono);
+      svg.appendChild(use);
+      li.appendChild(svg);
+
+      var quien = document.createElement('div');
+      quien.className = 'quien';
+      var nom = document.createElement('div');
+      nom.className = 'nombre';
+      nom.textContent = r.nombre;
+      var est = document.createElement('div');
+      est.className = 'estado';
+      if (!r.tomado) est.textContent = 'Aún puedes regalarlo';
+      else est.textContent = esMio(r.id) ? 'Lo llevas tú ✓' : '¡Ya lo llevan! ✓';
+      quien.appendChild(nom);
+      quien.appendChild(est);
+      li.appendChild(quien);
+
+      if (!r.tomado) {
+        var b = document.createElement('button');
+        b.textContent = 'Lo llevo yo';
+        b.onclick = function(){ cambiar(r.id, true, b, 'Lo llevo yo'); };
+        li.appendChild(b);
+      } else if (esMio(r.id)) {
+        var d = document.createElement('button');
+        d.className = 'deshacer';
+        d.textContent = 'Ya no puedo';
+        d.onclick = function(){ cambiar(r.id, false, d, 'Ya no puedo'); };
+        li.appendChild(d);
+      } else {
+        var m = document.createElement('span');
+        m.className = 'marca';
+        m.textContent = 'Cubierto';
+        li.appendChild(m);
+      }
+      lista.appendChild(li);
+    });
+  }
+
+  function traer(){
+    fetch(API, { cache: 'no-store' })
+      .then(function(r){ return r.json(); })
+      .then(pintar)
+      .catch(function(){});
+  }
+
+  function cambiar(id, tomado, boton, texto){
+    boton.disabled = true;
+    boton.textContent = '…';
+    fetch(API, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ id: id, tomado: tomado })
+    }).then(function(r){ return r.json(); })
+      .then(function(regalos){
+        var i = mios.indexOf(id);
+        if (tomado && i === -1) mios.push(id);
+        if (!tomado && i !== -1) mios.splice(i, 1);
+        guardar();
+        pintar(regalos);
+      })
+      .catch(function(){ boton.disabled = false; boton.textContent = texto; });
+  }
+
+  traer();
+  setInterval(traer, 15000);
+  document.addEventListener('visibilitychange', function(){ if (!document.hidden) traer(); });
+})();
+</script>
+</body>
+</html>
